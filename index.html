@@ -58,7 +58,7 @@ Ingredient rules: macro-critical items (proteins, grains, oils, jarred sauces) u
 .app[data-theme="cool"]{--paper:#F6F8FB;--paper2:#E8EEF5;--card:#FFFFFF;--ink:#10202F;--green:#1C6CEB;--green-hover:#1857C4;--green-soft:#5C6B7B;--sage:#9FB3C8;--saffron:#1C6CEB;--saffron-deep:#1857C4;--tomato:#E5484D;--line:#E1E8F0;--line-soft:#EDF2F7;--slot-fill:#EEF4FF;--on-green:#FFFFFF;--on-saffron:#FFFFFF;--good:#1C6CEB;--badge-bg:#EAEFF5;--badge-fg:#5C6B7B;--fresh-bg:#E3F0E7;--fresh-fg:#2E7D4F;--fridge-bg:#E4EEF8;--fridge-fg:#2A6BB0;--freezer-bg:#EAE9F6;--freezer-fg:#5A52A8;--ok-bg:#E3F0E7;--ok-fg:#2E7D4F;--warn-bg:#FCEBD9;--warn-fg:#B5702A;--gen-hover:#EEF4FF;--scrim:rgba(16,32,47,.45);}
 .app[data-theme="dark"]{--paper:#14171A;--paper2:#262D33;--card:#1B2126;--ink:#ECE6D9;--green:#E0A33E;--green-hover:#EBB257;--green-soft:#97A09A;--sage:#5E6B5C;--saffron:#E0A33E;--saffron-deep:#E7B45A;--tomato:#E0673E;--line:#2D353B;--line-soft:#242B30;--slot-fill:#222B22;--on-green:#1A1205;--on-saffron:#1A1205;--good:#7BB45F;--badge-bg:#262D33;--badge-fg:#B7BEB6;--fresh-bg:#22301F;--fresh-fg:#9FCB87;--fridge-bg:#1F2A33;--fridge-fg:#86B4D6;--freezer-bg:#272431;--freezer-fg:#B0A6D6;--ok-bg:#22301F;--ok-fg:#9FCB87;--warn-bg:#33271C;--warn-fg:#E0A36A;--gen-hover:#2A241A;--scrim:rgba(0,0,0,.6);}
 *{box-sizing:border-box;}
-.app{font-family:var(--body);background:var(--paper);color:var(--ink);max-width:760px;min-height:100vh;margin:0 auto;padding:calc(18px + env(safe-area-inset-top,0px)) 18px calc(104px + env(safe-area-inset-bottom,0px));-webkit-font-smoothing:antialiased;line-height:1.5;}
+.app{font-family:var(--body);background:var(--paper);color:var(--ink);max-width:760px;min-height:100vh;min-height:100dvh;margin:0 auto;padding:calc(18px + env(safe-area-inset-top,0px)) 18px calc(104px + env(safe-area-inset-bottom,0px));-webkit-font-smoothing:antialiased;line-height:1.5;}
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron-deep);margin-bottom:8px;}
 .title{font-family:var(--display);font-weight:600;font-size:42px;line-height:1.02;letter-spacing:-.01em;margin:0 0 10px;white-space:nowrap;}
 .sub{color:var(--green-soft);font-size:15px;max-width:54ch;margin:0;}
@@ -176,7 +176,7 @@ Ingredient rules: macro-critical items (proteins, grains, oils, jarred sauces) u
 .confirm-row{display:flex;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap;font-size:14px;color:var(--ink);}
 .restore{display:block;margin:6px auto 0;background:none;border:none;color:var(--green-soft);font-family:var(--mono);font-size:12px;text-decoration:underline;cursor:pointer;}
 .ft{font-size:12px;color:var(--green-soft);margin-top:32px;padding-top:18px;border-top:1px solid var(--line-soft);}
-.overlay{position:fixed;inset:0;background:var(--scrim);display:flex;align-items:flex-end;justify-content:center;z-index:50;padding-top:max(12px,env(safe-area-inset-top,0px));padding-bottom:max(12px,env(safe-area-inset-bottom,0px));}
+.overlay{position:fixed;top:0;left:0;right:0;height:100vh;height:100dvh;background:var(--scrim);display:flex;align-items:flex-end;justify-content:center;z-index:50;padding-top:max(12px,env(safe-area-inset-top,0px));padding-bottom:max(14px,env(safe-area-inset-bottom,0px));}
 .sheet{background:var(--paper);width:100%;max-width:760px;max-height:86vh;border-radius:18px 18px 0 0;padding:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 -8px 40px rgba(0,0,0,.18);}
 .sheet-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
 .x{font-size:26px;line-height:1;background:none;border:none;color:var(--green-soft);cursor:pointer;padding:0 4px;}
@@ -190,6 +190,8 @@ Ingredient rules: macro-critical items (proteins, grains, oils, jarred sauces) u
 .gen-btn{background:none;color:var(--saffron-deep);border:1px dashed var(--saffron);}
 .gen-btn:hover{background:var(--gen-hover);}
 .gen-btn.full{width:100%;margin-bottom:16px;}
+.btn.full{width:100%;display:block;}
+.onboard-cta{min-height:50px;font-size:15.5px;}
 .sheet .gen-btn{width:100%;margin-top:10px;}
 .ai-tag{font-family:var(--mono);font-size:9px;letter-spacing:.08em;background:var(--saffron);color:var(--on-saffron);border-radius:4px;padding:2px 5px;margin-left:8px;vertical-align:middle;}
 .week-tag{color:var(--saffron-deep);font-family:var(--mono);font-size:11px;}
@@ -259,7 +261,7 @@ Ingredient rules: macro-critical items (proteins, grains, oils, jarred sauces) u
 .modal-x:hover{color:var(--ink);}
 .mt-progress{margin-top:6px;}
 .mt-progress .track{margin-bottom:6px;}
-.editmodal{max-width:520px;max-height:88vh;overflow-y:auto;}
+.editmodal{max-width:520px;max-height:calc(100dvh - 64px);overflow-y:auto;}
 .edit-ings,.edit-steps{display:flex;flex-direction:column;gap:8px;}
 .edit-row{display:flex;gap:6px;align-items:flex-start;}
 .e-qty{width:62px;flex:none;font-size:16px;padding:11px 8px;border:1.5px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);}
@@ -290,7 +292,7 @@ Ingredient rules: macro-critical items (proteins, grains, oils, jarred sauces) u
 .set-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--saffron-deep);margin-bottom:10px;}
 .set-note{margin-top:10px;}
 .onboard-overlay{z-index:9000;}
-.onboard{max-width:420px;max-height:88vh;overflow-y:auto;}
+.onboard{max-width:420px;max-height:calc(100dvh - 64px);overflow-y:auto;}
 .onboard-hero{text-align:center;padding:4px 0 6px;}
 .onboard-title{font-family:var(--display);font-size:30px;font-weight:600;color:var(--green);margin:2px 0 0;}
 .onboard-tag{font-size:13.5px;color:var(--green-soft);line-height:1.5;margin:8px 0 0;}
@@ -354,7 +356,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .hd-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;}
 .gear-btn{flex:none;margin-top:8px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--green-soft);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;}
 .gear-btn:hover{background:var(--paper2);color:var(--green);}
-.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--card);border-top:1px solid var(--line);box-shadow:0 -2px 16px rgba(0,0,0,.05);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px);}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--card);border-top:1px solid var(--line);box-shadow:0 -2px 16px rgba(0,0,0,.05);padding-bottom:max(10px,env(safe-area-inset-bottom,0px));padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px);}
 .tabbar-inner{max-width:760px;margin:0 auto;display:flex;align-items:stretch;padding:6px 8px calc(6px + env(safe-area-inset-bottom));}
 .tabitem{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:9px 0 6px;background:none;border:none;cursor:pointer;color:var(--green-soft);position:relative;}
 .tabitem .tab-ind{position:absolute;top:0;width:30px;height:3px;border-radius:3px;background:transparent;transition:background .15s;}

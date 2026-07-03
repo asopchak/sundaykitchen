@@ -1,5 +1,5 @@
 // Sunday Kitchen offline cache. Bump the version below whenever you upload a new index.html.
-const CACHE = 'sunday-kitchen-v15';
+const CACHE = 'sunday-kitchen-v16';
 self.addEventListener('install', function(e){
   e.waitUntil(caches.open(CACHE).then(function(c){ return c.addAll(['./','./index.html','./icon-warm.png','./icon-cool.png','./icon-dark.png']); }).then(function(){ return self.skipWaiting(); }));
 });
